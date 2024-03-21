@@ -10,57 +10,57 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 servers:
-- url: https://virtserver.swaggerhub.com/Legal-One/BECodingTest/1.0.0
-  description: SwaggerHub API Auto Mocking
+  - url: https://virtserver.swaggerhub.com/Legal-One/BECodingTest/1.0.0
+    description: SwaggerHub API Auto Mocking
 tags:
-- name: analytics
-  description: Analytics functions
+  - name: analytics
+    description: Analytics functions
 paths:
   /count:
     get:
       tags:
-      - analytics
+        - analytics
       summary: searches logs and provides aggregated count of matches
       description: |
         Count all matching items in the logs.
       operationId: searchLogs
       parameters:
-      - name: serviceNames
-        in: query
-        description: array of service names
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: serviceNames
+          in: query
+          description: array of service names
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+        - name: startDate
+          in: query
+          description: start date
+          required: false
+          style: form
+          explode: true
+          schema:
             type: string
-      - name: startDate
-        in: query
-        description: start date
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          format: dateTime
-      - name: endDate
-        in: query
-        description: end date
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          format: dateTime
-      - name: statusCode
-        in: query
-        description: filter on request status code
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: integer
+            format: dateTime
+        - name: endDate
+          in: query
+          description: end date
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            format: dateTime
+        - name: statusCode
+          in: query
+          description: filter on request status code
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
       responses:
         "200":
           description: count of matching results
@@ -74,7 +74,7 @@ components:
   schemas:
     CountItem:
       required:
-      - counter
+        - counter
       type: object
       properties:
         counter:

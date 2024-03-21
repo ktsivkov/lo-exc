@@ -17,8 +17,6 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route(path: '/', name: 'app_test')]
 class LogsController extends AbstractController
 {
-    private const COUNTER_BODY_CTX = 'counter';
-
     public function __construct(
         private readonly CountRequestFactoryInterface      $countRequestFactory,
         private readonly SearchCriteriaFactoryInterface    $criteriaFactory,
