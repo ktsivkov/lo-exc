@@ -1,0 +1,16 @@
+.idea
+
+###> symfony/framework-bundle ###
+/codebase/.env.local
+/codebase/.env.local.php
+/codebase/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/codebase/public/bundles/
+/codebase/var/
+/codebase/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+/codebase/.phpunit.result.cache
+/codebase/phpunit.xml
+###< symfony/phpunit-bridge ###
