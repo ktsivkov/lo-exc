@@ -36,11 +36,11 @@ class LogsController extends AbstractController
         try {
             $countRequest = $this->countRequestFactory->get($request);
         } catch (InvalidParameter $e) {
-            return $this->json([
-                'message' => $e->getMessage(),
-                'parameter' => $e->getParameter(),
-                'parameterValue' => $e->getValue(),
-            ], Response::HTTP_BAD_REQUEST);
+            return $this->json($this->countResponseFactory->getError(
+                message: $e->getMessage(),
+                parameter: $e->getParameter(),
+                parameterValue: $e->getValue(),
+            ), Response::HTTP_BAD_REQUEST);
         }
         $criteria = $this->criteriaFactory->getCriteria($countRequest);
         return $this->json($this->countResponseFactory->get(counter: $this->linesRetrieverService->getLinesCount($criteria)), Response::HTTP_OK);
